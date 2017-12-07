@@ -2,12 +2,12 @@
 
 Technologies Used:
 
-Java
-Postgres SQL
-Spring Framework
-JDBC 
-Hibernate
-Heroku (Host)
+1) Java
+2 Postgres SQL
+3) Spring Framework
+4) JDBC 
+5) Hibernate
+6) Heroku (Host)
 
 
 ###Project 1: Facility Management System Design and Implementation
