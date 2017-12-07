@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.facility.maintenance">
+	<class name="MaintenanceImpl" table="maintenance" entity-name="maintenance">
+		<id name="maintenanceID" column="maintenance_id">
+			<generator class="increment"/>
+		</id>
+		<property name="details" type="string" column="details"/>
+		<property name="cost" type="int" column="cost"/>
+		<many-to-one name="facility" class="com.facility.base.FacilityImpl" column="facility_id" not-null="true"/>
+	</class>
+	<class name="MaintenanceImpl" table="maint_request" entity-name="maint_request">
+		<id name="maintenanceRequestID" column="maint_request_id">
+			<generator class="increment"/>
+		</id>
+		<property name="details" type="string" column="details"/>
+		<property name="cost" type="int" column="cost"/>
+		<many-to-one name="facility" class="com.facility.base.FacilityImpl" column="facility_id" not-null="true"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.facility.use">
+	<class name="FacilityUseImpl" table="use">
+		<id name="useID" column="use_id">
+			<generator class="increment"/>
+		</id>
+		<property name="roomNumber" type="int" column="room_number"/>
+		<property name="startDate" type="java.time.LocalDate" column="start_date"/>
+		<property name="endDate" type="java.time.LocalDate" column="end_date"/>
+		<many-to-one name="facility" class="com.facility.base.FacilityImpl" column="facility_id" not-null="true"/>
+	</class>
+</hibernate-mapping>

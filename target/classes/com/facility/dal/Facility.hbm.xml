@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.facility.base">
+	<class name="FacilityImpl" table="facility">
+		<id name="facilityID" type="int">
+			<column name="id" />
+		</id>
+		<one-to-one name="facilityDetail" class="com.facility.base.FacilityDetailImpl" 
+			cascade="save-update, delete"></one-to-one> 
+	</class>
+</hibernate-mapping>

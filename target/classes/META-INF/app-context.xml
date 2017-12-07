@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for the Facility Management System Application.</description>
+
+	<context:component-scan base-package="com.facility" />
+	
+	<bean id="facilityDetail" class="com.facility.base.FacilityDetailImpl" scope="prototype"/>
+	<bean id="facilityUse" class="com.facility.use.FacilityUseImpl" scope="prototype"/>
+	<bean id="inspection" class="com.facility.use.InspectionImpl" scope="prototype"/>
+	<bean id="maintenance" class="com.facility.maintenance.MaintenanceImpl" scope="prototype"/>
+	
+	<bean id="facility" class="com.facility.base.FacilityImpl" scope="prototype">
+		<property name="facilityDetail" ref="facilityDetail" />
+	</bean>
+	
+	<bean id="facilityService" class="com.facility.service.FacilityService" scope="prototype"/>
+	<bean id="useService" class="com.facility.service.UseService" scope="prototype"/>
+	<bean id="maintenanceService" class="com.facility.service.MaintenanceService" scope="prototype"/>
+	
+</beans>
